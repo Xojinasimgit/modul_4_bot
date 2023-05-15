@@ -1,16 +1,14 @@
 import logging
-import aiogram.utils.markdown as md
+import os
+
 from aiogram import Bot, Dispatcher, executor
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
-from aiogram.dispatcher import FSMContext
-from aiogram.dispatcher.filters.state import StatesGroup, State
-from aiogram.types import Message, ParseMode, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
-import csv
+from aiogram.types import Message
 
-BOT_TOKEN = "5959278377:AAGv9u-0MPyOBUntGyOwLTh0Oiz1nhqdv3M"
+
 logging.basicConfig(level=logging.INFO)
 
-bot = Bot(BOT_TOKEN)
+bot = Bot(os.getenv("TOKEN"))
 storage = MemoryStorage()
 
 dp = Dispatcher(bot, storage=storage)
